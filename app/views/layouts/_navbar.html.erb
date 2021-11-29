@@ -1,0 +1,24 @@
+<header class="1">
+  <nav class="navbar">
+    <div class="2">
+      <a class="navbar-brand" href="/">Tasklist</a>
+
+      <div class="3">
+        <% if logged_in? %>
+          <div class="btn-group">
+            <%= current_user.name %>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li class="7"><%= link_to 'Logout', logout_path, method: :delete %></li>
+            </ul>
+          </div> 
+        
+        <%  else %>
+          <ul class="4">
+            <li class="5"><%= link_to 'Signup', signup_path %></li>
+            <li class="6"><%= link_to 'Login', login_path %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </nav>
+</header>
