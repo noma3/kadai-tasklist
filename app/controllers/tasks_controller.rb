@@ -1,9 +1,8 @@
 class TasksController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:destroy,:show,:edit,:update]
-  
+
   def index
-    @task = current_user.tasks.build  # form_with 用
     @pagy, @tasks = pagy(current_user.tasks.order(id: :desc))
   end
 
